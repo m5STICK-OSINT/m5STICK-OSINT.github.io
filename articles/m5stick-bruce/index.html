@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M5StickC Plus2: прошивка Bruce — полный гайд | M5STICK-OSINT</title>
+    <meta name="description" content="Пошаговая инструкция по прошивке M5StickC Plus2 прошивкой Bruce. Что умеет, как настроить, где скачать. Только для образовательных целей.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: #111;
+            padding: 15px 30px;
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #00ff9d;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: #00ff9d; }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+
+        .article-container h1 {
+            color: #00ff9d;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 15px;
+        }
+
+        .article-container h2 {
+            color: #fff;
+            font-size: 1.4rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 3px solid #00ff9d;
+            padding-left: 12px;
+        }
+
+        .article-container h3 {
+            color: #ddd;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .article-container p {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        .article-container ul, .article-container ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            color: #ccc;
+        }
+
+        .article-container li {
+            margin-bottom: 8px;
+        }
+
+        .article-container code {
+            background-color: #1a1a1a;
+            color: #00ff9d;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+
+        .article-container pre {
+            background-color: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 6px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .article-container pre code {
+            background: none;
+            padding: 0;
+            color: #e0e0e0;
+        }
+
+        .warning {
+            background-color: #1a1a0d;
+            border-left: 4px solid #ffcc00;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .warning p {
+            color: #ffcc00;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: #111;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+            .article-container h1 { font-size: 1.5rem; }
+            header { flex-direction: column; gap: 10px; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">M5STICK-OSINT</div>
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/articles/">Статьи</a>
+            <a href="/about/">О сайте</a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <h1>M5StickC Plus2: прошивка Bruce — полный гайд</h1>
+        <div class="article-meta">Опубликовано: 8 октября 2026</div>
+
+        <p>M5StickC Plus2 — это компактное устройство на базе ESP32-S3 с цветным экраном, Wi-Fi, Bluetooth, ИК-портом и микрофоном. С прошивкой Bruce оно превращается в многофункциональный инструмент для тестирования безопасности.</p>
+
+        <div class="warning">
+            <p>⚠️ Всё описанное ниже предназначено исключительно для образовательных целей и тестирования собственных устройств. Использование против чужих систем преследуется по закону.</p>
+        </div>
+
+        <h2>Что такое Bruce</h2>
+        <p>Bruce — это альтернативная прошивка для ESP32-устройств, которая добавляет функции, отсутствующие в стандартной прошивке M5Stack. В сообществе её часто называют «бюджетной альтернативой Flipper Zero».</p>
+
+        <h3>Основные возможности:</h3>
+        <ul>
+            <li>Wi-Fi: сканирование сетей, Evil Portal (для тестирования своих сетей)</li>
+            <li>Bluetooth: сканирование устройств, BadUSB</li>
+            <li>ИК-порт: управление бытовой техникой</li>
+            <li>RFID/NFC (с дополнительным модулем)</li>
+            <li>Встроенные игры и утилиты</li>
+        </ul>
+
+        <h2>Что понадобится</h2>
+        <ul>
+            <li>M5StickC Plus2</li>
+            <li>USB-C кабель</li>
+            <li>Компьютер (Windows, macOS, Linux)</li>
+            <li>Программа для прошивки (например, M5Burner или esptool)</li>
+        </ul>
+
+        <h2>Как прошить</h2>
+        <ol>
+            <li>Скачай прошивку Bruce с официального GitHub-репозитория проекта.</li>
+            <li>Установи M5Burner или esptool.</li>
+            <li>Подключи M5StickC Plus2 к компьютеру через USB-C.</li>
+            <li>Выбери порт и файл прошивки в программе.</li>
+            <li>Нажми «Burn» и дождись завершения.</li>
+            <li>После прошивки устройство перезагрузится автоматически.</li>
+        </ol>
+
+        <h2>Первый запуск</h2>
+        <p>После прошивки на экране появится меню Bruce. Навигация — кнопками на устройстве. Первым делом рекомендуется подключиться к Wi-Fi и проверить работу сканера сетей.</p>
+
+        <h2>Итог</h2>
+        <p>M5StickC Plus2 с прошивкой Bruce — это доступный инструмент для изучения информационной безопасности. При цене устройства около 2000–2500 рублей он даёт возможности, которые раньше требовали гораздо более дорогого оборудования.</p>
+
+        <div class="warning">
+            <p>⚠️ Помни: все эксперименты проводи только на своих устройствах и сетях. Это не только законно, но и безопасно.</p>
+        </div>
+
+    </article>
+
+    <footer>
+        <p>© 2026 M5STICK-OSINT. Все материалы предоставлены исключительно в образовательных целях.</p>
+        <p>Использование описанных инструментов против чужих систем преследуется по закону.</p>
+    </footer>
+
+</body>
+</html>
