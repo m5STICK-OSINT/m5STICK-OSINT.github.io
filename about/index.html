@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О сайте — M5STICK-OSINT</title>
+    <meta name="description" content="О проекте M5STICK-OSINT: цели, тематика, принципы.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: #111;
+            padding: 15px 30px;
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #00ff9d;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: #00ff9d; }
+
+        .page-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 30px;
+        }
+
+        .page-content h1 {
+            color: #00ff9d;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            border-left: 4px solid #00ff9d;
+            padding-left: 15px;
+        }
+
+        .page-content h2 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .page-content p {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        .page-content ul {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            color: #ccc;
+        }
+
+        .page-content li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background-color: #111;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; gap: 10px; }
+            nav a { margin: 0 10px; }
+            .page-content h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">M5STICK-OSINT</div>
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/articles/">Статьи</a>
+            <a href="/about/">О сайте</a>
+        </nav>
+    </header>
+
+    <div class="page-content">
+        <h1>О сайте</h1>
+
+        <p>M5STICK-OSINT — это проект, посвящённый практическому изучению информационной безопасности, OSINT и работе с устройствами на базе ESP32, в частности M5StickC Plus2.</p>
+
+        <h2>Цели проекта</h2>
+        <ul>
+            <li>Публиковать проверенные руководства, а не теорию из книг</li>
+            <li>Разбирать инструменты, которые можно использовать легально</li>
+            <li>Помогать новичкам разобраться в теме без лишней воды</li>
+        </ul>
+
+        <h2>Принципы</h2>
+        <p>Все материалы предоставлены исключительно в образовательных целях. Мы не публикуем инструкции по взлому чужих систем, краже данных или нарушению закона. Всё, что описано на сайте, можно и нужно применять только к своим устройствам и сетям.</p>
+
+        <h2>Контакты</h2>
+        <p>Связаться с автором можно через GitHub: <a href="https://github.com/m5STICK-OSINT" style="color:#00ff9d;">github.com/m5STICK-OSINT</a></p>
+    </div>
+
+    <footer>
+        <p>© 2026 M5STICK-OSINT. Все материалы предоставлены исключительно в образовательных целях.</p>
+        <p>Использование описанных инструментов против чужих систем преследуется по закону.</p>
+    </footer>
+
+</body>
+</html>
