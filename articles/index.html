@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статьи — M5STICK-OSINT</title>
+    <meta name="description" content="Все статьи по OSINT, M5StickC Plus2 и информационной безопасности.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #111;
+            padding: 15px 30px;
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #00ff9d;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: #00ff9d; }
+
+        .page-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 30px;
+        }
+
+        .page-content h1 {
+            color: #00ff9d;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            border-left: 4px solid #00ff9d;
+            padding-left: 15px;
+        }
+
+        .article-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .article-item {
+            background-color: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 25px;
+            transition: border-color 0.3s, transform 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .article-item:hover {
+            border-color: #00ff9d;
+            transform: translateY(-4px);
+        }
+
+        .article-item h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+
+        .article-item p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background-color: #111;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; gap: 10px; }
+            nav a { margin: 0 10px; }
+            .page-content h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">M5STICK-OSINT</div>
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/articles/">Статьи</a>
+            <a href="/about/">О сайте</a>
+        </nav>
+    </header>
+
+    <div class="page-content">
+        <h1>Все статьи</h1>
+
+        <div class="article-list">
+
+            <a href="/articles/m5stick-bruce/" class="article-item">
+                <h3>M5StickC Plus2: прошивка Bruce</h3>
+                <p>Пошаговая инструкция по прошивке. Что умеет, как настроить.</p>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 M5STICK-OSINT. Все материалы предоставлены исключительно в образовательных целях.</p>
+        <p>Использование описанных инструментов против чужих систем преследуется по закону.</p>
+    </footer>
+
+</body>
+</html>
